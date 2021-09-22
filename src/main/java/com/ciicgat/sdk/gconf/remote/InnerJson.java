@@ -14,8 +14,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * @author : August
- * @date 2020/3/23 13:20
+ * Created by August.Zhou on 2020/3/23 13:20
  */
 public class InnerJson {
     private static final ObjectMapper OBJECT_MAPPER;

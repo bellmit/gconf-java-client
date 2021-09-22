@@ -47,8 +47,6 @@ public class GConfHttpClient {
     /**
      * 获取configApp信息
      *
-     * @param configAppId
-     * @return
      */
     public ConfigApp getConfigApp(String configAppId) {
         Map<String, String> params = new HashMap<>(1);
@@ -63,8 +61,6 @@ public class GConfHttpClient {
     /**
      * 获取配置集合Key列表
      *
-     * @param configAppId
-     * @return
      */
     public List<String> listConfigKeys(String configAppId) {
         Map<String, String> params = new HashMap<>(1);
@@ -77,9 +73,6 @@ public class GConfHttpClient {
     /**
      * 获取单个配置项值
      *
-     * @param configAppId
-     * @param key
-     * @return
      */
     public String getConfig(String configAppId, String key) {
         Map<String, String> params = new HashMap<>(2);
@@ -89,8 +82,6 @@ public class GConfHttpClient {
     }
 
     /**
-     * @param configAppId
-     * @return
      */
     public Map<String, String> listConfigs(String configAppId) {
         Map<String, String> params = new HashMap<>(2);
@@ -108,8 +99,6 @@ public class GConfHttpClient {
     /**
      * 返回需要更新的appId列表
      *
-     * @param configAppIds
-     * @return
      */
     public List<String> watch(Collection<String> configAppIds) {
         Map<String, String> params = new HashMap<>(2);
