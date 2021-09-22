@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         # test against latest update of each major Java version, as well as specific updates of LTS versions:
-        java: [ 8.0.x, 11.0.x, 16.0.x ]
+        java: [ 11.0.x, 12.0.x, 13.0.x, 14.0.x,15.0.x, 16.0.x, 17.0.x ]
     permissions:
       contents: read
       packages: write
@@ -31,4 +31,4 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ matrix.java }}-${{ hashFiles('pom.xml', '**/pom.xml') }}
     - name: Build  and Test with Maven
-      run: mvn -B package --file pom.xml -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Ds
+      run: mvn -B package -DskipTests --file pom.xml -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Ds
