@@ -46,6 +46,8 @@
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven.test.skip>true</maven.test.skip>
+        <sonar.organization>guanaitong</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencies>
