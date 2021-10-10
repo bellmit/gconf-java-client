@@ -31,4 +31,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ matrix.java }}-${{ hashFiles('pom.xml', '**/pom.xml') }}
     - name: Build  and Test with Maven
-      run: mvn -B package -DskipTests --file pom.xml -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Ds
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn -B package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=guanaitong_gconf-java-client -DskipTests --file pom.xml -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Ds
